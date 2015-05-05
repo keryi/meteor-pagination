@@ -1,0 +1,30 @@
+<template name="paginate">
+{{#with pagination}}
+<nav>
+  <ul class="pagination">
+    {{#if hasPrevious}}
+    <li>
+      <a href="#" aria-label="Previous" class="go-previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {{/if}}
+    {{#each pages}}
+      {{#if isCurrentPage}}
+      <li class="active"><a href="#" class="go-to-page" data-pagenum="{{this}}">{{this}}</a></li>
+      {{else}}
+      <li><a href="#" class="go-to-page" data-pagenum="{{this}}">{{this}}</a></li>
+      {{/if}}
+
+    {{/each}}
+    {{#if hasNext}}
+    <li>
+      <a href="#" aria-label="Next" class="go-next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {{/if}}
+  </ul>
+</nav>
+{{/with}}
+</template>

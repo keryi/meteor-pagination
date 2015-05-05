@@ -57,4 +57,21 @@ Tinytest.add('paginate 10 per page', function(test) {
   });
   test.equal(pagination.currentIndex.get(), 9);
   test.isFalse(pagination.hasNext());
+
+  // go to 1st page
+  pagination.goFirst();
+  test.equal(pagination.currentIndex.get(), 0);
+  test.isFalse(pagination.hasPrevious());
+  test.equal(pagination.currentPage()[0].data, 'test#0');
+
+  // go to last page
+  pagination.goLast();
+  test.equal(pagination.currentIndex.get(), 9);
+  test.isFalse(pagination.hasNext());
+  test.equal(pagination.currentPage()[0].data, 'test#90');
+
+  // go to specific page
+  pagination.goTo(1);
+  test.equal(pagination.currentIndex.get(), 1);
+  test.equal(pagination.currentPage()[0].data, 'test#10');
 });

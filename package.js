@@ -19,6 +19,8 @@ Package.onUse(function(api) {
   api.use('twbs:bootstrap@3.3.4');
   api.use('reactive-var@1.0.5');
   api.addFiles('pagination.js', both);
+  api.addFiles('meteor-paginate.html', 'client');
+  api.addFiles('meteor-paginate.js', 'client');
   api.export('Pagination');
 });
 

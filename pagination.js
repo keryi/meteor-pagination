@@ -8,6 +8,10 @@ Pagination.prototype.itemCount = function() {
   return this.Coll.find().count();
 };
 
+Pagination.prototype.itemCount = function() {
+  return this.Coll.find().count();
+};
+
 Pagination.prototype.pageCount = function() {
   return Math.ceil(this.itemCount() / this.perPage);
 };
@@ -47,3 +51,10 @@ Pagination.prototype.goFirst = function() {
 Pagination.prototype.goLast = function() {
   this.currentIndex.set(this.pageCount() - 1);
 };
+
+Pagination.prototype.goTo = function(pageNum) {
+  pageIndex = pageNum - 1; // we start at 0
+  if (pageIndex <= this.pageCount()) {
+    this.currentIndex.set(pageIndex);
+  }
+}
