@@ -8,10 +8,6 @@ Pagination.prototype.itemCount = function() {
   return this.Coll.find().count();
 };
 
-Pagination.prototype.itemCount = function() {
-  return this.Coll.find().count();
-};
-
 Pagination.prototype.pageCount = function() {
   return Math.ceil(this.itemCount() / this.perPage);
 };
