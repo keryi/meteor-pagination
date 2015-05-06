@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'keryi:meteor-paginate',
+  name: 'keryi:meteor-pagination',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'A simple pagination for meteor',
@@ -26,7 +26,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('keryi:meteor-paginate');
+  api.use('keryi:meteor-pagination');
   api.addFiles('meteor-paginate-tests.js', 'server');
   api.addFiles('test-data.js', both);
 });
