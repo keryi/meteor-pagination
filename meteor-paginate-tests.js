@@ -72,6 +72,6 @@ Tinytest.add('paginate 10 per page', function(test) {
 
   // go to specific page
   pagination.goTo(1);
-  test.equal(pagination.currentIndex.get(), 1);
-  test.equal(pagination.currentPage()[0].data, 'test#10');
+  test.equal(pagination.currentIndex.get(), 0);
+  test.equal(pagination.currentPage()[0].data, 'test#0');
 });
